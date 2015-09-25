@@ -106,33 +106,15 @@
 <li><p>运行本地服务</p>
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br><span class="line">或者hexo s</span><br></pre></td></tr></table></figure>
 <p>此时在浏览器中输入：<code>localhost:4000</code>，可查看静态的网页</p>
-</li>
-<li><p>添加博文</p>
- <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>  <span class="preprocessor">#新建博文,其中postName是博文题目</span></span><br><span class="line">例如：hexo n <span class="string">"青云"</span></span><br></pre></td></tr></table></figure>
-<p> 刷新上述静态网页，可看到新添加的一篇博文。</p>
-<p> <em>PS:</em>博文会自动生成在博客目录下source/_posts/postName.md</p>
-</li>
-<li><p>部署到github</p>
-<ol>
-<li>打开github.com,注册github账户，如名字username，创建仓库仓库username.github.io</li>
-<li><p>配置ssh-key</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user<span class="class">.email</span> <span class="string">"你的邮箱"</span></span><br><span class="line">git config --global user<span class="class">.name</span> <span class="string">"你的用户名"</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br><span class="line">回车三次，在~/.ssh/下会生成id_rsa和id_rsa.pub两个文件</span><br><span class="line">复制id_rsa.pub文件内容到github账户下的ssh keys的新建key里面，ADD。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改hexo目录下_config.yml,在最后添加以下内容</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> 	<span class="attribute">type</span>: git</span><br><span class="line"> 	<span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:username/username.github.io.git</span><br><span class="line"> 	<span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行<code>npm install hexo-deployer-git --save</code></p>
-</li>
-<li>执行<code>hexo g</code>和<code>hexo d</code>完成部署</li>
-</ol>
-</li>
-<li>打开浏览器并输入username.github.io来查看你的博客</li>
-</ol>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/09/25/Mac成功搭建Hexo指南/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/25/Mac成功搭建Hexo指南/" data-id="ciez4fqc40000ajz6wj3ib034" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/25/Mac成功搭建Hexo指南/" data-id="ciezactla00003vz6tjqhr078" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/25/testHexo/" data-id="ciez4fqcs0001ajz6jo0gsaju" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/25/testHexo/" data-id="ciezactm700013vz6h659s4je" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/25/hello-world/" data-id="ciez4fqcu0002ajz69u5q9new" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/25/hello-world/" data-id="ciezactmf00023vz6cdlzeib3" class="article-share-link">Share</a>
       
       
     </footer>
