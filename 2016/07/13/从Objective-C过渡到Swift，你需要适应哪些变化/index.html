@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>从Objective-C过渡到Swift，你需要适应哪些变化？ | lujing&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近一段时间研究了swift,swift语言相对OC而言，语法更简洁、快速、安全，符合现代化编程思维，同时扩展了很多很强大的特性，比如类型推断、函数式编程、泛型等。但就做项目而言，用swift开发较之OC，大体只需要适应两个变化：语法的不同和第三方框架的不同。关于基本语法的教程，网上都有很多资料。需要详细了解请点击这里。如果基本语法已经看过，那么下面的总结应该可以帮助你更好的理解，以便快速上手sw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从Objective-C过渡到Swift，你需要适应哪些变化？">
+<meta property="og:url" content="http://bestlujing.com/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化/index.html">
+<meta property="og:site_name" content="lujing's blog">
+<meta property="og:description" content="最近一段时间研究了swift,swift语言相对OC而言，语法更简洁、快速、安全，符合现代化编程思维，同时扩展了很多很强大的特性，比如类型推断、函数式编程、泛型等。但就做项目而言，用swift开发较之OC，大体只需要适应两个变化：语法的不同和第三方框架的不同。关于基本语法的教程，网上都有很多资料。需要详细了解请点击这里。如果基本语法已经看过，那么下面的总结应该可以帮助你更好的理解，以便快速上手sw">
+<meta property="og:updated_time" content="2016-07-12T16:35:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从Objective-C过渡到Swift，你需要适应哪些变化？">
+<meta name="twitter:description" content="最近一段时间研究了swift,swift语言相对OC而言，语法更简洁、快速、安全，符合现代化编程思维，同时扩展了很多很强大的特性，比如类型推断、函数式编程、泛型等。但就做项目而言，用swift开发较之OC，大体只需要适应两个变化：语法的不同和第三方框架的不同。关于基本语法的教程，网上都有很多资料。需要详细了解请点击这里。如果基本语法已经看过，那么下面的总结应该可以帮助你更好的理解，以便快速上手sw">
+  
+    <link rel="alternative" href="/atom.xml" title="lujing&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lujing&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">a female programmer</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bestlujing.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-从Objective-C过渡到Swift，你需要适应哪些变化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化/" class="article-date">
+  <time datetime="2016-07-12T16:24:20.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      从Objective-C过渡到Swift，你需要适应哪些变化？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一段时间研究了swift,swift语言相对OC而言，语法更简洁、快速、安全，符合现代化编程思维，同时扩展了很多很强大的特性，比如类型推断、函数式编程、泛型等。但就做项目而言，用swift开发较之OC，大体只需要适应两个变化：语法的不同和第三方框架的不同。关于基本语法的教程，网上都有很多资料。需要详细了解请点击<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/chapter2.html" target="_blank" rel="external">这里</a>。如果基本语法已经看过，那么下面的总结应该可以帮助你更好的理解，以便快速上手swift开发。</p>
+<h4 id="一、常用基本知识点归纳">一、常用基本知识点归纳</h4><ol>
+<li>注意运算符使用时，要么前后都有空格，要么都没空格。否则会报错（认为运算符是前缀或者后缀），如 let x =5 编译报错。</li>
+<li>代码标注使用//MARK:- xxx (<code>对比OC的#pragma mark - xxx</code>)<a id="more"></a></li>
+<li>swift不支持#define宏定义，简单宏请使用let定义常量，复杂宏需要实现函数</li>
+<li>表示值缺失使用可选类型：Type?,表示要么没有值，要么有一个Type类型的值(不可能出现其他类型的值) (<code>对比OC的nil只能表示空对象，不能表示任何类型的值缺失</code>)</li>
+<li>类型转换使用as?或者as!,如AnyObject as? String(<code>对比OC的强制转换：NSString *str = xxx</code>)</li>
+<li>获取某个类的类型使用：类名.self(<code>对比OC的[类名 class]</code>)</li>
+<li>获取类名的字符串使用：String(类名)（<code>对比OC的NSStringFromClass([类名 class])</code>）</li>
+<li>重写setter方法使用属性观察器didSet（<code>对比OC的直接自定义setter方法</code>）</li>
+<li>某些特性的枚举值需要做或运算时使用[值1,值2]完成 (<code>对比OC的或运算：值1|值2</code>) </li>
+<li>swift2.2之前selector直接使用”方法名”，之后使用#selector(方法名)（<code>对比OC的@selector()</code>）</li>
+<li>子类重写父类的属性和方法必须使用override关键字</li>
+<li>自定义打印对象需要重写description属性:override var description:String{}(<code>对比OC的重写description方法</code>)</li>
+<li>类型方法使用static/class关键字来区分于实例方法，其中static修饰的类方法不可以被子类重写，class修饰的可以。(<code>对比OC的类方法/实例方法：+/-</code>)</li>
+<li>swift表示只读属性，使用常量属性：let xxx:Type (<code>对比OC的readonly属性</code>) </li>
+<li>swift计算型属性不占内存，仅提供getter/setter,用于间接获取或设置其他属性的值。(<code>对比OC的dynamic关键字修饰的属性</code>)</li>
+<li>swift调用构造器生成实例：类型名()/类型名(xx:xxx,yy:yyy,…)(<code>对比OC的[[类名 alloc] init]或者[[类名 alloc] initWithXx:xxx Yy:yyy ...]</code>)</li>
+<li>swift懒加载使用lazy属性：lazy var xxx:Type = {//具体操作}() (<code>对比OC的 - (Type)xxx{if (xxx == nil){//具体操作} return xxx}</code>)</li>
+<li><p>swift单行单例：</p>
+<pre><code>class Singleton:NSObject{
+   <span class="keyword"> static</span> let shareInstance =<span class="function"> Singleton(</span><span class="function">)</span>//可以确保多线程时，也只创建一次
+   <span class="keyword"> private</span> override<span class="function"> init(</span><span class="function">)</span>{}//设置为私有，避免在外部创建实例
+}
+
+//外部使用
+let<span class="instruction"> instance </span>= Singleton.shareInstance
+</code></pre></li>
+<li>swift中如果要定义类别，可使用扩展extension：extension 类型名{//可以扩展计算型属性和方法}(<code>对比OC的@interface 类型名(类别名)</code>)</li>
+<li>swift类必须继承自NSObject才可以在OC的代码中调用</li>
+</ol>
+<h4 id="二、swift优秀第三方库推荐">二、swift优秀第三方库推荐</h4><ol>
+<li>Alamofire：著名的AFNetworking网络基础库Swift版<a href="https://github.com/Alamofire/Alamofire.git" target="_blank" rel="external">github地址</a>,<code>类似OC中的AFNetworking</code></li>
+<li>SwiftyJSON：最为开发者认可的JSON解析类<a href="https://github.com/SwiftyJSON/SwiftyJSON.git" target="_blank" rel="external">github地址</a>,<code>类似OC中的JSONKit</code></li>
+<li>Kingfisher：图片下载和缓存处理的库<a href="https://github.com/onevcat/Kingfisher.git" target="_blank" rel="external">github地址</a>,<code>类似OC中的SDWebImage</code></li>
+<li>SnapKit：自动布局的库<a href="https://github.com/SnapKit/SnapKit.git" target="_blank" rel="external">github地址</a>,<code>类似OC中的Masonry</code></li>
+<li>SQLite.swift：简单、轻量，使用上最SQL的SQLite封装库<a href="https://github.com/stephencelis/SQLite.swift.git" target="_blank" rel="external">github地址</a>,<code>类似OC中的FMDB</code></li>
+<li>SugarRecord：基于CoreData与REALM的好用封装<a href="https://github.com/pepibumur/SugarRecord.git" target="_blank" rel="external">github地址</a></li>
+<li>SweetAlert：带动画效果弹窗封装类<a href="https://github.com/codestergit/SweetAlert-iOS.git" target="_blank" rel="external">github地址</a></li>
+<li>RAMAnimatedTabBarController：灵动的动画标签栏类库<a href="https://github.com/Ramotion/animated-tab-bar.git" target="_blank" rel="external">github地址</a></li>
+<li>PNChart-Swift：带动画效果的图表控件库<a href="https://github.com/kevinzhow/PNChart-Swift.git" target="_blank" rel="external">github地址</a></li>
+<li>LTMorphingLabel：各种文字动画效果<a href="https://github.com/lexrus/LTMorphingLabel.git" target="_blank" rel="external">github地址</a></li>
+</ol>
+<p>PS：如果没有所需的swift版本第三方库，可以使用桥接头文件的方式继续使用OC的相应的第三方库。</p>
+<p>最后，希望这篇文章对你有所帮助，可以早日掌握swift这门新语言。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bestlujing.com/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化/" data-id="ciqjof7yt0001tpz6i5k7kom1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/08/json数据转换为plist文件时去除null的解决方案/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">json数据转换为plist文件时去除null的解决方案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plist/">plist</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/plist/" style="font-size: 10px;">plist</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化/">从Objective-C过渡到Swift，你需要适应哪些变化？</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/08/json数据转换为plist文件时去除null的解决方案/">json数据转换为plist文件时去除null的解决方案</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/25/Mac成功搭建Hexo指南/">Mac成功搭建Hexo指南</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 lujing<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
