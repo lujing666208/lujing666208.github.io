@@ -7,20 +7,20 @@
   <title>iOS中storyboard使用时遇到的小坑 | lujing&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="今天在写demo时，遇到两个小坑，mark一下，以防下次再掉进去。
-###1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类">
+1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类Vie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中storyboard使用时遇到的小坑">
 <meta property="og:url" content="http://bestlujing.com/2016/07/22/iOS中storyboard使用时遇到的小坑/index.html">
 <meta property="og:site_name" content="lujing's blog">
 <meta property="og:description" content="今天在写demo时，遇到两个小坑，mark一下，以防下次再掉进去。
-###1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类">
+1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类Vie">
 <meta property="og:image" content="http://oaa8rrtr6.bkt.clouddn.com/tableView%E4%B8%8A%E9%9D%A2%E7%95%99%E7%99%BD.png">
-<meta property="og:image" content="http://oaa8rrtr6.bkt.clouddn.com/storyboard%E8%AE%BE%E7%BD%AE.png =200x300">
-<meta property="og:updated_time" content="2016-07-22T11:48:20.000Z">
+<meta property="og:image" content="http://oaa8rrtr6.bkt.clouddn.com/storyboard%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:updated_time" content="2016-07-22T12:02:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中storyboard使用时遇到的小坑">
 <meta name="twitter:description" content="今天在写demo时，遇到两个小坑，mark一下，以防下次再掉进去。
-###1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类">
+1.iOS7以后使用tableView时，上面会有空白在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：automaticallyAdjustsScrollViewInsets，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类Vie">
   
     <link rel="alternative" href="/atom.xml" title="lujing&#39;s blog" type="application/atom+xml">
   
@@ -102,19 +102,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>今天在写demo时，遇到两个小坑，mark一下，以防下次再掉进去。</p>
-<p>###1.iOS7以后使用tableView时，上面会有空白<br>在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：<br><code>automaticallyAdjustsScrollViewInsets</code>，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类View，那么它会自动设置相应的内边距，这样可以让scroll占据整个视图，又不会让导航栏遮盖。<br>效果如下图中绿框所示：</p>
-<p><img src="http://oaa8rrtr6.bkt.clouddn.com/tableView%E4%B8%8A%E9%9D%A2%E7%95%99%E7%99%BD.png" alt="image"><br><a id="more"></a></p>
-<p>####解决方法</p>
-<ul>
+<h3 id="1-iOS7以后使用tableView时，上面会有空白">1.iOS7以后使用tableView时，上面会有空白</h3><p>在有导航栏存在时，tableView上方会有空白，这是因为iOS7在Controller中新增了这个属性：<br><code>automaticallyAdjustsScrollViewInsets</code>，当设置为true时（默认true），如果视图里面存在唯一一个UIScrollView或其子类View，那么它会自动设置相应的内边距，这样可以让scroll占据整个视图，又不会让导航栏遮盖。<br>效果如下图中绿框所示：</p>
+<p><img src="http://oaa8rrtr6.bkt.clouddn.com/tableView%E4%B8%8A%E9%9D%A2%E7%95%99%E7%99%BD.png" width="40%"><br><a id="more"></a></p>
+<h4 id="解决方法">解决方法</h4><ul>
 <li><p>代码设置：</p>
   <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.automaticallyAdjustsScrollViewInsets = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>storyboard设置:<code>取消绿框中属性的勾选</code></p>
-<p>  <img src="http://oaa8rrtr6.bkt.clouddn.com/storyboard%E8%AE%BE%E7%BD%AE.png =200x300" alt="image"></p>
+<p>  <img src="http://oaa8rrtr6.bkt.clouddn.com/storyboard%E8%AE%BE%E7%BD%AE.png" width="40%"></p>
 </li>
 </ul>
-<p>###2.storyboard设置错误造成的崩溃：”this class is not key value coding-compliant for the key …”问题<br>在storyboard中对控件进行代码关联时，第一次属性名写的不合适，在代码中改了名字，然后又拖了一次线到新属性上，运行程序，跳转到此控制器时，程序崩溃，报错为<code>&quot;this class is not key value coding-compliant for the key ...&quot;</code>。查了半天，把该屏蔽的代码都屏蔽了，还是崩溃，感觉整个人都不好了。。。最后重整心情，从根源查找，既然说某个key不能被设置，那就看看哪里有用到这个key,代码中没有，就到storyboard中查找，突然发现，这个控制器上一个控件关联了代码中的两个属性，分别是之前设置的错误名字和新名字，其中错误名字正是报错中所说的key,而它在代码中已经不存在了，所以运行时，没法通过KVC设置这个key的值。</p>
-<p>####解决方法<br>删除控件和不存在的属性之间的关联</p>
+<h3 id="2-storyboard设置错误造成的崩溃：”this_class_is_not_key_value_coding-compliant_for_the_key_…”问题">2.storyboard设置错误造成的崩溃：”this class is not key value coding-compliant for the key …”问题</h3><p>在storyboard中对控件进行代码关联时，第一次属性名写的不合适，在代码中改了名字，然后又拖了一次线到新属性上，运行程序，跳转到此控制器时，程序崩溃，报错为<code>&quot;this class is not key value coding-compliant for the key ...&quot;</code>。查了半天，把该屏蔽的代码都屏蔽了，还是崩溃，感觉整个人都不好了。。。最后重整心情，从根源查找，既然说某个key不能被设置，那就看看哪里有用到这个key,代码中没有，就到storyboard中查找，突然发现，这个控制器上一个控件关联了代码中的两个属性，分别是之前设置的错误名字和新名字，其中错误名字正是报错中所说的key,而它在代码中已经不存在了，所以运行时，没法通过KVC设置这个key的值。</p>
+<h4 id="解决方法-1">解决方法</h4><p>删除控件和不存在的属性之间的关联</p>
 <p>今天被这两个坑耽误了好长时间，感觉还是对storyboard使用不熟，一旦出现细节上的错误，查找就很耗费时间。所以记录下来以备用。</p>
 
         
@@ -128,7 +127,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://bestlujing.com/2016/07/22/iOS中storyboard使用时遇到的小坑/" data-id="ciqxoo0tc000az7z6rkvhwxhb" class="article-share-link" data-share="baidu" data-title="iOS中storyboard使用时遇到的小坑">分享到</a>
+        <a data-url="http://bestlujing.com/2016/07/22/iOS中storyboard使用时遇到的小坑/" data-id="ciqxp1h03000a7dz6oyj3e02k" class="article-share-link" data-share="baidu" data-title="iOS中storyboard使用时遇到的小坑">分享到</a>
       
 
       
