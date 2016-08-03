@@ -4,17 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | lujing&#39;s blog</title>
+  <title>解决iOS7导航栏遮盖控件问题的三种方案 | lujing&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lujing's blog">
-<meta property="og:url" content="http://bestlujing.com/archives/2016/index.html">
+  <meta name="description" content="ios7之前的版本中UIViewController中的view在显示后会自动调整为去掉导航栏的高度的，控件会自动在导航栏以下摆放。在iOS7中UIViewController的wantsFullScreenLayout属性被舍弃了，所有的UIViewController创建后默认就是full Screen的，因此如果带导航栏的应用界面中的部分控件会被导航栏覆盖掉。
+解决方案方案1. 去掉顶部区域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决iOS7导航栏遮盖控件问题的三种方案">
+<meta property="og:url" content="http://bestlujing.com/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/index.html">
 <meta property="og:site_name" content="lujing's blog">
-<meta property="og:description">
+<meta property="og:description" content="ios7之前的版本中UIViewController中的view在显示后会自动调整为去掉导航栏的高度的，控件会自动在导航栏以下摆放。在iOS7中UIViewController的wantsFullScreenLayout属性被舍弃了，所有的UIViewController创建后默认就是full Screen的，因此如果带导航栏的应用界面中的部分控件会被导航栏覆盖掉。
+解决方案方案1. 去掉顶部区域">
+<meta property="og:updated_time" content="2016-08-03T03:24:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lujing's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="解决iOS7导航栏遮盖控件问题的三种方案">
+<meta name="twitter:description" content="ios7之前的版本中UIViewController中的view在显示后会自动调整为去掉导航栏的高度的，控件会自动在导航栏以下摆放。在iOS7中UIViewController的wantsFullScreenLayout属性被舍弃了，所有的UIViewController创建后默认就是full Screen的，因此如果带导航栏的应用界面中的部分控件会被导航栏覆盖掉。
+解决方案方案1. 去掉顶部区域">
   
     <link rel="alternative" href="/atom.xml" title="lujing&#39;s blog" type="application/atom+xml">
   
@@ -73,100 +77,78 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" class="archive-article-date">
-  <time datetime="2016-08-03T03:13:16.000Z" itemprop="datePublished">08-03</time>
+      <section id="main"><article id="post-解决iOS7导航栏遮盖控件问题的三种方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" class="article-date">
+  <time datetime="2016-08-03T03:13:16.000Z" itemprop="datePublished">2016-08-03</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/">解决iOS7导航栏遮盖控件问题的三种方案</a>
+    <h1 class="article-title" itemprop="name">
+      解决iOS7导航栏遮盖控件问题的三种方案
     </h1>
   
 
-    </header>
-  </div>
-</article>
-
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/22/iOS中storyboard使用时遇到的小坑/" class="archive-article-date">
-  <time datetime="2016-07-22T09:30:52.000Z" itemprop="datePublished">07-22</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/22/iOS中storyboard使用时遇到的小坑/">iOS中storyboard使用时遇到的小坑</a>
-    </h1>
-  
+        <p>ios7之前的版本中UIViewController中的view在显示后会自动调整为去掉导航栏的高度的，控件会自动在导航栏以下摆放。<br>在iOS7中UIViewController的wantsFullScreenLayout属性被舍弃了，所有的UIViewController创建后默认就是full Screen的，因此如果带导航栏的应用界面中的部分控件会被导航栏覆盖掉。</p>
+<h3 id="解决方案">解决方案</h3><h5 id="方案1-_去掉顶部区域的延伸">方案1. 去掉顶部区域的延伸</h5><a id="more"></a>
+<p>edgesForExtendedLayout则是表示视图是否覆盖到四周的区域，默认是UIRectEdgeAll，即上下左右四个方向都会覆盖，那么为让顶部不进行延伸到导航栏覆盖的区域，我们可以把顶部区域延伸去掉。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.edgesForExtendedLayout</span> = <span class="built_in">UIRectEdgeLeft</span>|<span class="built_in">UIRectEdgeRight</span>|<span class="built_in">UIRectEdgeBottom</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="方案2：设置导航栏为不透明">方案2：设置导航栏为不透明</h5><p>extendLayoutIncludesOpaqueBars属性指定了当bar使用不透明图片时，试图是否延伸至bar所在区域，默认值为NO。但是iOS7中导航栏默认是透明的。所以手动设置导航栏为不透明，则view布局会从导航栏下面开始。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.navigationController</span><span class="variable">.navigationBar</span><span class="variable">.translucent</span> = <span class="literal">NO</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="方案3：布局子视图时，y坐标考虑加上状态栏和导航栏的高度（20+44_=_64）">方案3：布局子视图时，y坐标考虑加上状态栏和导航栏的高度（20+44 = 64）</h5><p>例如某控件想紧挨着导航栏开始布局，则其frame的y设置为64即可。</p>
 
-    </header>
-  </div>
-</article>
+        
+            <pre><code><b>   版权声明</b>:
+    本文由<b><a href="/about" target="_blank" title="lujing">lujing</a></b>创作和发表,采用<b>署名(BY)</b>-<b>非商业性使用(NC)</b>-<b>相同方式共享(SA)</b>国际许可协议进行许可,转载请注明作者及出处。
+    本文作者为<b><a href="/about" target="_blank" title="lujing">lujing</a></b>,本文标题为<b><a href="/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" target="_blank" title="解决iOS7导航栏遮盖控件问题的三种方案">解决iOS7导航栏遮盖控件问题的三种方案</a></b>。
+    本文链接为<b><a href="/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" target="_blank" title="解决iOS7导航栏遮盖控件问题的三种方案">http://bestlujing.com/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/</a></b>。</code></pre>
 
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化？/" class="archive-article-date">
-  <time datetime="2016-07-12T16:24:20.000Z" itemprop="datePublished">07-13</time>
-</a>
+        
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/13/从Objective-C过渡到Swift，你需要适应哪些变化？/">从Objective-C过渡到Swift，你需要适应哪些变化？</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/08/json数据转换为plist文件时去除null的解决方案/" class="archive-article-date">
-  <time datetime="2016-07-08T09:54:57.000Z" itemprop="datePublished">07-08</time>
-</a>
+    </div>
+    <footer class="article-footer">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/08/json数据转换为plist文件时去除null的解决方案/">json数据转换为plist文件时去除null的解决方案</a>
-    </h1>
-  
+        <a data-url="http://bestlujing.com/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" data-id="cirebwhig00017hz6vvrkqs2b" class="article-share-link" data-share="baidu" data-title="解决iOS7导航栏遮盖控件问题的三种方案">分享到</a>
+      
 
-    </header>
+      
+        <a href="http://bestlujing.com/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/22/iOS中storyboard使用时遇到的小坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">iOS中storyboard使用时遇到的小坑</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-  
-  
-    </div></section>
-  
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/" data-title="解决iOS7导航栏遮盖控件问题的三种方案" data-url="http://bestlujing.com/2016/08/03/解决iOS7导航栏遮盖控件问题的三种方案/"></div>
+  </section>
 
 </section>
       
